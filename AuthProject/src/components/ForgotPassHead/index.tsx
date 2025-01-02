@@ -2,7 +2,6 @@ import React from "react";
 import { Head } from "./ui";
 import { Typography } from "../Typography";
 
-
 // const HeadData = [
 //   {
 //     id: 1,
@@ -25,10 +24,11 @@ const SignInHead: React.FC = () => {
   return (
     <Head>
       <Typography>
-        <span>Let's</span> Sign In
+        <span>Forgot your</span> Password?
       </Typography>
       <span>
-        Hey, Enter your details to get sign in <br /> into your account
+        Please, enter your email address. You will receive a link to create a{" "}
+        <br /> new password viw email.
       </span>
     </Head>
   );

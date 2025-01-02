@@ -6,6 +6,7 @@ export const Typography = styled("h3")(({ theme }) => ({
   display: "flex",
   alignItems: "baseline",
   gap: "10px",
+  width:'100dvh',
   fontSize: "25px",
   "& span": {
     fontSize: "25px",
