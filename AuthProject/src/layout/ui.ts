@@ -5,6 +5,7 @@ export const LayoutContent = styled("div")({
   justifyContent: "center",
   alignItems: "center",
   gap: "4px",
+   
 });
 
 export const LogonSection = styled("div")(({ theme }) => ({
@@ -16,6 +17,12 @@ export const LogonSection = styled("div")(({ theme }) => ({
   justifyContent: "center",
   alignItems:'center',
   borderRadius:'32px',
+  backgroundImage: `url('/src/assets/pngwing.png')`, 
+  backgroundSize: "contain", 
+  backgroundRepeat: "no-repeat", 
+  backgroundPosition: "0px 10px",
+  overflowX: "hidden",
+  // mixBlendMode: "multiply", 
 }));
 
 export const ChildContent = styled("div") ({

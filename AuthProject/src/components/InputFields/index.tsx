@@ -1,13 +1,22 @@
 import { useController } from "react-hook-form";
 import { InputContainer, LabelText } from "./ui";
+import React from "react";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function InputField(props: any) {
+interface InputFieldProps{
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  control: any,
+  name: string,
+  label: string,
+  type: string,
+  placeholder: string,
+  rules: Record<string, unknown>,
+  defaultValue?: string 
+}
+
+const  InputField :React.FC<InputFieldProps> = (props) =>{
   const { field, fieldState } = useController(props);
-  //   console.log("props.errors", props.errors);
-  //   console.log("fieldState", fieldState);
-  //   console.log("field", field);
-
+console.log('fieldState', fieldState)
+console.log('fieldState.error', fieldState.error)
   return (
     <InputContainer>
       <LabelText>{props.label}</LabelText>

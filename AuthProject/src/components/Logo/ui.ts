@@ -6,6 +6,7 @@ export const LogoSection = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   flexDirection: "column",
+ 
   gap: "10px",
   // paddingTop: "16px",
   overflowX: "hidden",

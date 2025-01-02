@@ -1,7 +1,7 @@
 const RouteData = {
     APP:'/',
     SIGNIN: '/',
-    SIGNUP: '/signup',
+    FORGOTPASSWORD: '/forgot-password',
     RESETPASSWORD: '/reset-password',
 
 }

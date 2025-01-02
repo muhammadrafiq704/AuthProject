@@ -1,5 +1,4 @@
 import React from "react";
-import SignInHead from "../../components/SignInHead";
 import InputField from "../../components/InputFields";
 import { useForm } from "react-hook-form";
 import { FormContent, InputContent, LoginContent, Navlink } from "./ui";
@@ -7,14 +6,18 @@ import { Button } from "../../components/Button";
 // or
 import { CircularProgress } from "@mui/material";
 // import { NavLink } from "react-router-dom";
+import ForgotPassHead from "../../components/ForgotPassHead";
+import { useNavigate } from "react-router-dom";
 
-const SignIn: React.FC = () => {
+const ForgotPassword: React.FC = () => {
   const {
     control,
     handleSubmit,
     reset,
     formState: { isSubmitting, isValid, isSubmitSuccessful },
-  } = useForm({ mode: "onChange", defaultValues: { email: "", password: "" } });
+  } = useForm({ mode: "onChange", defaultValues: { email: "" } });
+
+  const navigate = useNavigate();
 
   console.log("isSubmitting", isSubmitting);
   console.log("isValid", isValid);
@@ -22,15 +25,15 @@ const SignIn: React.FC = () => {
   React.useEffect(() => {
     reset({
       email: "",
-      password: "",
     });
   }, [isSubmitSuccessful, reset]);
 
   console.log("isSubmitSuccessful", isSubmitSuccessful);
+
   return (
     <>
       <LoginContent>
-        <SignInHead />
+        <ForgotPassHead />
         <form onSubmit={handleSubmit((data) => console.log(data))} action="">
           <FormContent>
             <InputContent>
@@ -43,30 +46,27 @@ const SignIn: React.FC = () => {
                 defaultValue=""
                 rules={{ required: "Email is required" }}
               />
-              <InputField
-                control={control}
-                name="password"
-                type="password"
-                placeholder="Enter your password"
-                label="Password"
-                defaultValue=""
-                rules={{ required: "Password is required" }}
-              />
-              <Navlink to={"/forgot-password"}>Forgot Password?</Navlink>
             </InputContent>
 
-            <Button type="submit" disabled={!isValid}>
+            <Button
+              type="submit"
+              disabled={!isValid}
+              onClick={() => navigate("/reset-password")}
+            >
               {isSubmitSuccessful ? (
                 <CircularProgress size={10} color="inherit" />
               ) : (
-                "Submit"
+                "Send"
               )}
             </Button>
           </FormContent>
         </form>
+        <Navlink to={"/"}>
+          Back to <span>Login</span>
+        </Navlink>
       </LoginContent>
     </>
   );
 };
 
-export default SignIn;
+export default ForgotPassword;
