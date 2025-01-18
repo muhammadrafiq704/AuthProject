@@ -6,6 +6,13 @@ import appRoutes from './routes/routes'
 import theme from './theme'
 
 
+
+const root = document.getElementById('root');
+
+if (!root){
+  throw new Error('Root element not found');
+}
+
 const router = createBrowserRouter(createRoutesFromElements(appRoutes))
 
 createRoot(document.getElementById('root')!).render(

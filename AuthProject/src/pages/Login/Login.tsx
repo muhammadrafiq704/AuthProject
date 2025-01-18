@@ -2,9 +2,8 @@ import React from "react";
 import SignInHead from "../../components/SignInHead";
 import InputField from "../../components/InputFields";
 import { useForm } from "react-hook-form";
-import { FormContent, InputContent, LoginContent, Navlink } from "./ui";
-import { Button } from "../../components/Button";
-// or
+import { FormContent, InputContent, LoginContent, Navlink } from "./styled";
+import { Button } from "../../components/Button/styled";
 import { CircularProgress } from "@mui/material";
 // import { NavLink } from "react-router-dom";
 
@@ -13,11 +12,9 @@ const SignIn: React.FC = () => {
     control,
     handleSubmit,
     reset,
-    formState: { isSubmitting, isValid, isSubmitSuccessful },
+    formState: { isSubmitting, isSubmitSuccessful },
   } = useForm({ mode: "onChange", defaultValues: { email: "", password: "" } });
 
-  console.log("isSubmitting", isSubmitting);
-  console.log("isValid", isValid);
 
   React.useEffect(() => {
     reset({
@@ -26,7 +23,6 @@ const SignIn: React.FC = () => {
     });
   }, [isSubmitSuccessful, reset]);
 
-  console.log("isSubmitSuccessful", isSubmitSuccessful);
   return (
     <>
       <LoginContent>
@@ -52,11 +48,22 @@ const SignIn: React.FC = () => {
                 defaultValue=""
                 rules={{ required: "Password is required" }}
               />
-              <Navlink to={"/forgot-password"}>Forgot Password?</Navlink>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  width: "100%",
+                }}
+              >
+                <Navlink to={"/forgot-password"}>Forgot Password?</Navlink>
+              </div>
             </InputContent>
 
-            <Button type="submit" disabled={!isValid}>
-              {isSubmitSuccessful ? (
+            <Button
+              type="submit"
+              // disabled={!isValid}
+            >
+              {isSubmitting ? (
                 <CircularProgress size={10} color="inherit" />
               ) : (
                 "Submit"

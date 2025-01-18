@@ -1,6 +1,6 @@
 import React from "react";
-import { Head } from "./ui";
-import { Typography } from "../Typography";
+import { Head } from "./styled";
+import { Typography } from "../Typography/styled";
 
 const SignInHead: React.FC = () => {
   return (

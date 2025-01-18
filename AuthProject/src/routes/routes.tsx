@@ -1,5 +1,5 @@
 import { Route } from "react-router-dom";
-import RouteData from "./RouteData";
+import RouteData from "../utils/routePaths";
 import App from "../App";
 import ErrorBoundary from "../components/ErrorBoundary";
 import Login from "../pages/Login/Login";

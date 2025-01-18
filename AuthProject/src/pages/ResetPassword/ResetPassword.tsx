@@ -1,12 +1,12 @@
 import React from "react";
 import InputField from "../../components/InputFields";
 import { useForm } from "react-hook-form";
-import { FormContent, InputContent, LoginContent, Navlink } from "./ui";
-import { Button } from "../../components/Button";
+import { FormContent, InputContent, LoginContent, Navlink } from "./styled";
+import { Button } from "../../components/Button/styled";
 // or
 import { CircularProgress } from "@mui/material";
 import ResetPassHead from "../../components/ResetPassHead";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // import { NavLink } from "react-router-dom";
 
 const ResetPassword: React.FC = () => {
@@ -14,12 +14,12 @@ const ResetPassword: React.FC = () => {
     control,
     handleSubmit,
     reset,
-    formState: { isValid, isSubmitSuccessful, errors },
+    formState: {  isSubmitSuccessful },
   } = useForm({
     mode: "onChange",
     defaultValues: { new_password: "", confirm_password: "" },
   });
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   React.useEffect(() => {
     reset({
@@ -28,7 +28,6 @@ const ResetPassword: React.FC = () => {
     });
   }, [isSubmitSuccessful, reset]);
 
-  console.log("errors", errors);
 
   return (
     <>
@@ -60,8 +59,8 @@ const ResetPassword: React.FC = () => {
 
             <Button
               type="submit"
-              disabled={!isValid}
-              onClick={() => navigate("/")}
+              // disabled={!isValid}
+              // onClick={() => navigate("/")}
             >
               {isSubmitSuccessful ? (
                 <CircularProgress size={10} color="inherit" />

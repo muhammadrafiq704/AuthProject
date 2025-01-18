@@ -1,22 +1,21 @@
 import { useController } from "react-hook-form";
-import { InputContainer, LabelText } from "./ui";
+import { InputContainer, LabelText } from "./styled";
 import React from "react";
 
-interface InputFieldProps{
+interface InputFieldProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  control: any,
-  name: string,
-  label: string,
-  type: string,
-  placeholder: string,
-  rules: Record<string, unknown>,
-  defaultValue?: string 
+  control: any;
+  name: string;
+  label: string;
+  type: string;
+  placeholder: string;
+  rules: Record<string, unknown>;
+  defaultValue?: string;
 }
 
-const  InputField :React.FC<InputFieldProps> = (props) =>{
+const InputField: React.FC<InputFieldProps> = (props) => {
   const { field, fieldState } = useController(props);
-console.log('fieldState', fieldState)
-console.log('fieldState.error', fieldState.error)
+
   return (
     <InputContainer>
       <LabelText>{props.label}</LabelText>
@@ -26,9 +25,9 @@ console.log('fieldState.error', fieldState.error)
         type={props.type}
         style={{
           padding: "16px 10px",
-          width: "80dvh",
+          width: "auto",
           outline: "none",
-          borderRadius: "15px",
+          borderRadius: "20px",
           backgroundColor: "white",
           color: "black",
           border: "none",
@@ -41,6 +40,6 @@ console.log('fieldState.error', fieldState.error)
       )}
     </InputContainer>
   );
-}
+};
 
 export default InputField;

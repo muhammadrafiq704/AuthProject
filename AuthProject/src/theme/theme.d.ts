@@ -4,10 +4,18 @@ import { PaletteOptions as PaletteOptionsMUI } from "@mui/material";
 PaletteOptions;
 
 declare module "@mui/material/styles" {
+  interface Palette{
+    button: {
+      primary: string;
+      radius: string;
+      hoverColor:string;
+    },
+  }
   interface PaletteOptions extends PaletteOptionsMUI {
     button: {
       primary: string;
       radius: string;
+      hoverColor: string,
     };
     heading: {
       primary: string;
@@ -27,3 +35,17 @@ declare module "@mui/material/styles" {
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface Palette extends PaletteOptions {}
+
+declare module '@mui/material/styles' {
+  interface BreakpointOverrides {
+    xs: false; // removes the `xs` breakpoint
+    sm: false;
+    md: false;
+    lg: false;
+    xl: false;
+    mobile: true; // adds the `mobile` breakpoint
+    tablet: true;
+    laptop: true;
+    desktop: true;
+  }
+}

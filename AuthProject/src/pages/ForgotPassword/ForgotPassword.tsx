@@ -1,8 +1,8 @@
 import React from "react";
 import InputField from "../../components/InputFields";
 import { useForm } from "react-hook-form";
-import { FormContent, InputContent, LoginContent, Navlink } from "./ui";
-import { Button } from "../../components/Button";
+import { FormContent, InputContent, LoginContent, Navlink } from "./styled";
+import { Button } from "../../components/Button/styled";
 // or
 import { CircularProgress } from "@mui/material";
 // import { NavLink } from "react-router-dom";
@@ -14,13 +14,11 @@ const ForgotPassword: React.FC = () => {
     control,
     handleSubmit,
     reset,
-    formState: { isSubmitting, isValid, isSubmitSuccessful },
+    formState: { isSubmitting, isSubmitSuccessful },
   } = useForm({ mode: "onChange", defaultValues: { email: "" } });
 
   const navigate = useNavigate();
 
-  console.log("isSubmitting", isSubmitting);
-  console.log("isValid", isValid);
 
   React.useEffect(() => {
     reset({
@@ -28,7 +26,6 @@ const ForgotPassword: React.FC = () => {
     });
   }, [isSubmitSuccessful, reset]);
 
-  console.log("isSubmitSuccessful", isSubmitSuccessful);
 
   return (
     <>
@@ -47,13 +44,12 @@ const ForgotPassword: React.FC = () => {
                 rules={{ required: "Email is required" }}
               />
             </InputContent>
-
             <Button
               type="submit"
-              disabled={!isValid}
+              // disabled={!isValid}
               onClick={() => navigate("/reset-password")}
             >
-              {isSubmitSuccessful ? (
+              {isSubmitting ? (
                 <CircularProgress size={10} color="inherit" />
               ) : (
                 "Send"
@@ -61,9 +57,11 @@ const ForgotPassword: React.FC = () => {
             </Button>
           </FormContent>
         </form>
-        <Navlink to={"/"}>
-          Back to <span>Login</span>
-        </Navlink>
+        <div style={{ display: "flex", width: "100%" }}>
+          <Navlink to={"/"}>
+            Back to <span>Login</span>
+          </Navlink>
+        </div>
       </LoginContent>
     </>
   );

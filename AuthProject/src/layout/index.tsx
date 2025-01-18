@@ -1,12 +1,13 @@
 import React from "react";
-import { ChildContent, LayoutContent, LogonSection } from "./ui";
-import LogoSection from "./LogoSection";
+import { ChildContent, LayoutContent, LogonSection } from "./styled";
+import Logo from "./LogoSection";
 import { Outlet } from "react-router-dom";
+
 const AppLayout: React.FC = () => {
   return (
     <LayoutContent>
       <LogonSection>
-        <LogoSection />
+        <Logo />
       </LogonSection>
       <ChildContent>
         <Outlet />
