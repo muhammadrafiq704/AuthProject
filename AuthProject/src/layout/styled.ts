@@ -37,7 +37,7 @@ export const LogonSection = styled("div")(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   borderRadius: "32px",
-  backgroundImage: `url('public/assets/images/pngwing.png')`,
+  backgroundImage: `url('assets/images/pngwing.png')`,
   backgroundSize: "contain",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "0px 10px",
