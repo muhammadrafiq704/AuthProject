@@ -6,7 +6,6 @@ import Login from "../pages/Login/Login";
 import AppLayout from "../layout";
 import ResetPassword from "../pages/ResetPassword/ResetPassword";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
-import Test from "../pages/Test/test";
 
 // Loader function
 const forgotPasswordLoader = async () => {
@@ -29,7 +28,6 @@ const appRoutes = (
         loader={forgotPasswordLoader}
       />
       <Route path={RouteData.RESETPASSWORD} element={<ResetPassword />} loader={forgotPasswordLoader} />
-      <Route path={RouteData.TEST} element={<Test />} />
     </Route>
   </Route>
 );
