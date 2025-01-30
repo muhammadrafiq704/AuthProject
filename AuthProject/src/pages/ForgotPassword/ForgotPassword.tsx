@@ -36,11 +36,12 @@ const ForgotPassword: React.FC = () => {
             <InputContent>
               <InputField
                 control={control}
+                id="1"
                 name="email"
                 type="email"
                 placeholder="Enter your email"
                 label="Email"
-                defaultValue=""
+                variant="filled"
                 rules={{ required: "Email is required" }}
               />
             </InputContent>

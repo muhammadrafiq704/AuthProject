@@ -14,8 +14,10 @@ if (!root){
 }
 
 const router = createBrowserRouter(createRoutesFromElements(appRoutes))
+// const router = createBrowserRouter(appRoutes))
 
-createRoot(document.getElementById('root')!).render(
+ 
+createRoot(root).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
        <CssBaseline enableColorScheme />

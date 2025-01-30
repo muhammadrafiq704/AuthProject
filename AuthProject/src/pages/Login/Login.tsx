@@ -2,9 +2,10 @@ import React from "react";
 import SignInHead from "../../components/SignInHead";
 import InputField from "../../components/InputFields";
 import { useForm } from "react-hook-form";
-import { FormContent, InputContent, LoginContent, Navlink } from "./styled";
+import { FormContent, InputContent, LoginContent } from "./styled";
 import { Button } from "../../components/Button/styled";
 import { CircularProgress } from "@mui/material";
+import { NavLink } from "react-router-dom";
 // import { NavLink } from "react-router-dom";
 
 const SignIn: React.FC = () => {
@@ -14,7 +15,6 @@ const SignIn: React.FC = () => {
     reset,
     formState: { isSubmitting, isSubmitSuccessful },
   } = useForm({ mode: "onChange", defaultValues: { email: "", password: "" } });
-
 
   React.useEffect(() => {
     reset({
@@ -31,21 +31,23 @@ const SignIn: React.FC = () => {
           <FormContent>
             <InputContent>
               <InputField
+                id="1"
                 control={control}
                 name="email"
                 type="email"
+                variant="filled"
                 placeholder="Enter your email"
-                label="Email"
-                defaultValue=""
+                label="Enter your email"
                 rules={{ required: "Email is required" }}
               />
               <InputField
+                id="2"
                 control={control}
                 name="password"
                 type="password"
+                variant="filled"
                 placeholder="Enter your password"
-                label="Password"
-                defaultValue=""
+                label="Enter your password"
                 rules={{ required: "Password is required" }}
               />
               <div
@@ -55,7 +57,18 @@ const SignIn: React.FC = () => {
                   width: "100%",
                 }}
               >
-                <Navlink to={"/forgot-password"}>Forgot Password?</Navlink>
+                {/* local pending navigation in NavLink */}
+                {/* <Navlink to={"/forgot-password"}>Forgot Password?</Navlink> */}
+                <NavLink
+                  to={"/forgot-password"}
+                  style={{ textDecoration: "none", fontSize: "14px" }}
+                >
+                  {({ isPending }) => (
+                    <span>
+                      {isPending ? "loading..." : "Forgot Password? "}
+                    </span>
+                  )}
+                </NavLink>
               </div>
             </InputContent>
 

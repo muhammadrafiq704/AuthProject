@@ -38,20 +38,22 @@ const ResetPassword: React.FC = () => {
             <InputContent>
               <InputField
                 control={control}
+                id="1"
                 name="new_password"
                 type="password"
+                variant="filled"
                 placeholder="Enter new password"
                 label="New Password"
-                defaultValue=""
                 rules={{ required: "New password is required" }}
               />
               <InputField
                 control={control}
+                id="2"
                 name="confirm_password"
                 type="password"
+                variant="filled"
                 placeholder="Enter confirm password"
                 label="Confirm Password"
-                defaultValue=""
                 rules={{ required: "Confirm password is required" }}
               />
               {/* <Navlink to={"/reset-password"}>Forgot Password?</Navlink> */}

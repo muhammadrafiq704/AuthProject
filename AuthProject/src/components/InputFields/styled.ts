@@ -6,34 +6,35 @@ export const InputContainer = styled("div")(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   gap: "2px",
-  [theme.breakpoints.between("mobile", "tablet")]: {
-    width: "35dvh",
-  },
-  [theme.breakpoints.between("tablet", "laptop")]: {
-    width: "55dvh",
-  },
+  // border: "1px solid red",
+  // [theme.breakpoints.between("mobile", "tablet")]: {
+  //   width: "35dvh",
+  // },
+  // [theme.breakpoints.between("tablet", "laptop")]: {
+  //   width: "55dvh",
+  // },
   "& input": {
-    "&:focus": {
-      boxShadow: `0 0 4px ${theme.palette.primary.light}`,
-    },
-    [theme.breakpoints.between("mobile", "tablet")]: {
-      padding: "8px 4px",
-      width: "auto",
-      outline: "none",
-      borderRadius: "8px",
-      backgroundColor: "white",
-      color: "black",
-      border: "none",
-    },
-    [theme.breakpoints.between("tablet", "laptop")]: {
-      padding: "12px 10px",
-      width: "auto",
-      outline: "none",
-      borderRadius: "19px",
-      backgroundColor: "white",
-      color: "black",
-      border: "none",
-    },
+    // "&:focus": {
+    //   boxShadow: `0 0 4px ${theme.palette.primary.light}`,
+    // },
+    // [theme.breakpoints.between("mobile", "tablet")]: {
+    //   padding: "8px 4px",
+    //   width: "auto",
+    //   outline: "none",
+    //   borderRadius: "8px",
+    //   backgroundColor: "white",
+    //   color: "black",
+    //   border: "none",
+    // },
+    // [theme.breakpoints.between("tablet", "laptop")]: {
+    //   padding: "12px 10px",
+    //   width: "auto",
+    //   outline: "none",
+    //   borderRadius: "19px",
+    //   backgroundColor: "white",
+    //   color: "black",
+    //   border: "none",
+    // },
   },
   "& span": {
     paddingLeft: "12px",

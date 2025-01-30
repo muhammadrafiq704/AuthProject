@@ -1,44 +1,45 @@
 import { useController } from "react-hook-form";
 import { InputContainer, LabelText } from "./styled";
 import React from "react";
+import { TextField, TextFieldVariants, Typography } from "@mui/material";
 
 interface InputFieldProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control: any;
+  id: string;
   name: string;
   label: string;
   type: string;
+  variant: TextFieldVariants;
   placeholder: string;
   rules: Record<string, unknown>;
-  defaultValue?: string;
 }
 
 const InputField: React.FC<InputFieldProps> = (props) => {
   const { field, fieldState } = useController(props);
 
   return (
+    <>
+  
     <InputContainer>
       <LabelText>{props.label}</LabelText>
-      <input
+      <TextField
         {...field}
-        placeholder={props.placeholder}
+        fullWidth
+        hiddenLabel
+        id={props.id}
+        name={props.name}
         type={props.type}
-        style={{
-          padding: "16px 10px",
-          width: "auto",
-          outline: "none",
-          borderRadius: "20px",
-          backgroundColor: "white",
-          color: "black",
-          border: "none",
-        }}
+        variant={props.variant}
+        // label={props.label}
       />
       {fieldState.error && (
-        <span style={{ color: "red", marginTop: "2px", fontSize: "12px" }}>
+        <Typography sx={{ color: "red", marginTop: "2px", fontSize: "12px" }}>
           {fieldState.error.message}
-        </span>
+        </Typography>
       )}
     </InputContainer>
+    </>
   );
 };
 
