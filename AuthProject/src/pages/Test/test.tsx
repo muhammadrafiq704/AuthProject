@@ -15,7 +15,7 @@ const [value, setValue] = useState('')
     reset({
       email: "",
     });
-  }, []);
+  }, [ reset]);
   return (
     <>
     <InputField
