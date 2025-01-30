@@ -1,6 +1,6 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import React from "react";
-import Loading from "./components/Loading/Laoding";
+import Loading from "./components/Loading/Loading";
 
 const App: React.FC = () => {
   //global pending navigation loading state
