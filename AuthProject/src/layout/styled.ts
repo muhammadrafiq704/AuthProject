@@ -76,3 +76,6 @@ export const ChildContent = styled("div")(({ theme }) => ({
     width: "60dvh",
   },
 }));
+
+// pages styles components 
+
