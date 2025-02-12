@@ -9,7 +9,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
     <HeaderContainer>
       <p>{title}</p>
-      {title !== "User" && (
+      {title !== "UserA" && (
         <div>
           <span>Open house visit</span>
           <strong> 6,867</strong>

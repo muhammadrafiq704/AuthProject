@@ -8,8 +8,9 @@ const RouteData = {
     
     //page layout route
     DASHBOARD: "/dashboard",
-    USERS: "/user",
-    OPENHOUSES: "/open-houses",
+    USERSA: "/userA",  //demo routes
+    OPENHOUSES: "/open-houses",  //demo routes
+    PROPERTYA: "/propertyA",  //demo routes
 
 }
 export default RouteData

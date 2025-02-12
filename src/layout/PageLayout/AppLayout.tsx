@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import {
   Accordion,
@@ -11,8 +11,22 @@ import SidebarData from "./utils";
 import { GridExpandMoreIcon } from "@mui/x-data-grid";
 import AppContent from "./AppContent";
 
-const PageLayout: React.FC = () => {
+const AppLayout: React.FC = () => {
   const location = useLocation();
+  const [expandedAccordion, setExpandedAccordion] = useState<number | null>(
+    null
+  );
+
+  useEffect(() => {
+    SidebarData.forEach((item) => {
+      const isChildActive = item?.children?.some(
+        (child) => child.href === location.pathname
+      );
+      if (isChildActive) {
+        setExpandedAccordion(item.id);
+      }
+    });
+  }, [location.pathname]);
   return (
     // over all app box
     <Box
@@ -60,14 +74,24 @@ const PageLayout: React.FC = () => {
             scrollbarWidth: "none",
           }}
         >
-          {SidebarData.map((item) =>
-            item.accordion ? (
+          {SidebarData.map((item) => {
+            const isChildActive = item?.children?.some(
+              (item) => item.href === location.pathname
+            );
+            console.log("active", isChildActive);
+            return item.accordion ? (
               <Accordion
                 key={item.id}
                 sx={{
                   backgroundColor: "transparent",
                   boxShadow: "none",
                 }}
+                expanded={expandedAccordion === item.id || isChildActive}
+                onChange={() =>
+                  setExpandedAccordion(
+                    expandedAccordion === item.id ? null : item.id
+                  )
+                }
               >
                 <AccordionSummary
                   expandIcon={
@@ -82,7 +106,7 @@ const PageLayout: React.FC = () => {
                     gap: "27px",
                     backgroundColor:
                       location.pathname === item.href
-                        ? "rgba(248, 248, 248, 0.2)"
+                        ? "rgba(248, 248, 248, 0.27)"
                         : "",
                     borderRadius: location.pathname === item.href ? "20px" : "",
                   }}
@@ -91,32 +115,36 @@ const PageLayout: React.FC = () => {
                     src={item.icon}
                     alt="icon"
                     style={{ paddingRight: "8px" }}
+                    height={24}
                   />
-                  <NavLink
-                    style={{
+                  <Typography
+                    sx={{
                       textDecoration: "none",
                       color: "white",
                       fontSize: "16px",
                       fontWeight: "600",
                     }}
-                    to={item.href}
                   >
                     {item.title}
-                  </NavLink>
+                  </Typography>
                 </AccordionSummary>
                 {item?.children?.map((child) => (
                   <AccordionDetails
+                    key={child.id}
                     sx={{
-                      marginLeft: "30px",
+                      display: "flex",
+                      justifyContent: "baseline",
+                      alignItems: "center",
+                      marginLeft: "20px",
                       p: 0,
                       backgroundColor:
-                        location.pathname === item.href
-                          ? "rgba(248, 248, 248, 0.2)"
+                        location.pathname === child.href
+                          ? "rgba(248, 248, 248, 0.27)"
                           : "",
                       borderRadius:
-                        location.pathname === item.href ? "20px" : "",
+                        location.pathname === child.href ? "20px" : "",
+                      padding: location.pathname === child.href ? 2 : "",
                     }}
-                    key={child.id}
                   >
                     <img src={child.icon} alt="icon" />
                     <NavLink
@@ -125,7 +153,7 @@ const PageLayout: React.FC = () => {
                         color: "white",
                         fontSize: "16px",
                         fontWeight: "600",
-                        paddingLeft: "20px",
+                        paddingLeft: "10px",
                       }}
                       to={child.href}
                     >
@@ -136,6 +164,7 @@ const PageLayout: React.FC = () => {
               </Accordion>
             ) : (
               <Box
+                key={item.id}
                 sx={{
                   display: "flex",
                   alignItems: "center",
@@ -161,8 +190,8 @@ const PageLayout: React.FC = () => {
                   {item.title}
                 </NavLink>
               </Box>
-            )
-          )}
+            );
+          })}
         </Box>
       </Box>
       {/* app content holds   */}
@@ -171,4 +200,4 @@ const PageLayout: React.FC = () => {
   );
 };
 
-export default PageLayout;
+export default AppLayout;

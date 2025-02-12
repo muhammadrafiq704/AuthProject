@@ -18,7 +18,7 @@ const SidebarData: UtilsDataProps[] = [
     id: 2,
     title: "User",
     icon: "/assets/SidebarIcons/user.png",
-    href: "/user",
+    href: "",
     accordion: true,
     children: [
       {

@@ -6,10 +6,11 @@ import Login from "../pages/Login/Login";
 import AppLayout from "../layout";
 import ResetPassword from "../pages/ResetPassword/ResetPassword";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
-import PageLayout from "../layout/PageLayout/PageLayout";
+import PageLayout from "../layout/PageLayout/AppLayout";
 import Dashboard from "../pages/Dashboard";
 import User from "../pages/User";
 import OpenHouses from "../pages/OpenHouses";
+import PropertyA from "../pages/Property";
 import NotFound from "../components/NotFound";
 
 // Loader function
@@ -42,25 +43,30 @@ const appRoutes = (
         loader={forgotPasswordLoader}
       />
     </Route>
-    <Route element={<PageLayout />}  loader={forgotPasswordLoader}>
+    <Route element={<PageLayout />} loader={forgotPasswordLoader}>
       <Route
         path={RouteData.DASHBOARD}
         element={<Dashboard />}
         loader={forgotPasswordLoader}
       />
-      <Route
-        path={RouteData.USERS}
+      <Route  //demo routes
+        path={RouteData.USERSA}
         element={<User />}
         loader={forgotPasswordLoader}
       />
-      <Route
-        path={RouteData.OPENHOUSES}
+      <Route //demo routes
+        path={RouteData.OPENHOUSES} 
         element={<OpenHouses />}
+        loader={forgotPasswordLoader}
+      />
+      <Route  //demo routes
+        path={RouteData.PROPERTYA}
+        element={<PropertyA />}
         loader={forgotPasswordLoader}
       />
     </Route>
     {/* not found page render if no route matches */}
-    <Route path="*" element={<NotFound/>}></Route>
+    <Route path="*" element={<NotFound />}></Route>
   </Route>
 );
 
