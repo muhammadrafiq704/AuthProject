@@ -1,4 +1,4 @@
-import { Alert } from "@mui/material";
+import { Alert, Snackbar } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 const OfflineAlert: React.FC = () => {
@@ -17,14 +17,23 @@ const OfflineAlert: React.FC = () => {
   }, []);
   return (
     <>
-      {isOffline && (
+      <Snackbar
+        open={isOffline}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
         <Alert
           severity="error"
-          sx={{ position: "fixed", top: 0, width: "100%", zIndex: 1000 , fontSize:'14px'}}
+          variant="filled"
+          sx={{
+            width: "100%",
+            maxWidth: "500px",
+            fontSize: "14px",
+            justifyContent: "center",
+          }}
         >
           You are offline. Please check your internet connection.
         </Alert>
-      )}
+      </Snackbar>
     </>
   );
 };

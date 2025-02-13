@@ -18,6 +18,7 @@ const AppContent: React.FC = () => {
           flexDirection: "column",
           gap: "10px",
           width: "100%",
+          // p:1,
         }}
       >
         <Box sx={{ height: "100px", flexShrink: 0 }}>
