@@ -2,8 +2,10 @@ import * as React from "react";
 import { LineChart } from "@mui/x-charts/LineChart";
 // import { Button } from "../../../components/Button/styled";
 import UIButton from "../../../components/Button/UIButton";
+import { Box, Typography, useTheme } from "@mui/material";
 
 const BasicLineChart: React.FC = () => {
+  const theme = useTheme();
   return (
     <div
       style={{
@@ -20,47 +22,92 @@ const BasicLineChart: React.FC = () => {
           padding: "0px 20px 0px 20px",
         }}
       >
-        <h3 style={{ fontSize: "16px" }}>Traffic</h3>
+        <Typography
+          variant="h6"
+          sx={{
+            fontSize: "14px",
+            [theme.breakpoints.between("mobile", "tablet")]: {
+              fontSize: "14px",
+              fontWeight:'700'
+            },
+            [theme.breakpoints.between("tablet", "laptop")]: {
+              fontSize: "16px",
+               fontWeight:'700'
+            },
+            [theme.breakpoints.between("laptop", "desktop")]: {
+              fontSize: "18px",
+              fontWeight:'700'
+            },
+            [theme.breakpoints.up("desktop")]: { fontSize: "24px",  fontWeight:'700' },
+          }}
+        >
+          Traffic
+        </Typography>
         <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
-          <div style={{ display: "flex", alignItems:'center', gap:'8px'}}>
-            <div
-              style={{
+          <Box sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <Box
+              sx={{
+                borderRadius: "50%",
+                width: "15px",
+                height: "15px",
+                backgroundColor: "#61A0FD",
+                display: { mobile: "none", tablet: "block" },
+                fontSize: { laptop: "18px", desktop: "20px" },
+              }}
+            />
+            <Typography
+              sx={{
+                display: { mobile: "none", tablet: "block" },
+              }}
+            >
+              Offers
+            </Typography>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center", justifyContent:'center', gap: "8px" }}>
+            <Box
+              sx={{
                 borderRadius: "50%",
                 width: "15px",
                 height: "15px",
                 backgroundColor: "red",
+                display: { mobile: "none", tablet: "block" },
+                fontSize: { laptop: "18px", desktop: "20px" },
               }}
-            ></div>
-            <p>Offers</p>
-          </div>
-          <div style={{ display: "flex", alignItems:'center', gap:'8px'}}>
-            <div
-              style={{
-                borderRadius: "50%",
-                width: "15px",
-                height: "15px",
-                backgroundColor: "lightBlue",
+            />
+            <Typography
+              sx={{
+                display: { mobile: "none", tablet: "block" },
               }}
-            ></div>
-            <p>Offers</p>
-          </div>
+            >
+              Offers
+            </Typography>
+          </Box>
           <UIButton
             fs={12}
             variant="outlined"
             styleType="inverted"
             label="Week"
+            sx={{
+              display: { mobile: "none", tablet: "block" },
+            }}
           />
           <UIButton
             fs={12}
             variant="outlined"
             styleType="inverted"
             label="Month"
+            sx={{
+              display: { mobile: "none", tablet: "block" },
+            }}
           />
           <UIButton
             fs={12}
             variant="contained"
             styleType="default"
             label="Year"
+            sx={{
+              display: { mobile: "none", tablet: "block" },
+            }}
           />
         </div>
       </div>
