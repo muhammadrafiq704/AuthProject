@@ -92,7 +92,7 @@ const CategoryContainer = styled("div")(({ theme }) => ({
     alignItems: "center",
     flexWrap: "wrap",
     width: "100%",
-    gap: "8px",
+    gap: "4px",
   },
   "& div": {
     display: "flex",
@@ -102,35 +102,43 @@ const CategoryContainer = styled("div")(({ theme }) => ({
     width: "150px",
     height: "125px",
     borderRadius: "10px",
+    padding: "8px",
     [theme.breakpoints.between("mobile", "tablet")]: {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      width: "100px",
-      height: "80px",
+      width: "90px",
+      height: "70px",
+      gap: "0px",
       borderRadius: "8px",
     },
     "& p": {
       fontSize: "12px",
       fontWeight: "600",
+      display: "-webkit-box",
+      WebkitLineClamp: 1,
+      WebkitBoxOrient: "vertical",
       [theme.breakpoints.between("mobile", "tablet")]: {
         fontSize: "8px",
-        fontWeight: "500",
+        fontWeight: "600",
+        textAlign: "center",
+        WebkitLineClamp: 1,
       },
     },
+
     "& span": {
       fontSize: "20px",
       fontWeight: "700",
       [theme.breakpoints.between("mobile", "tablet")]: {
-        fontSize: "12px",
+        fontSize: "10px",
         fontWeight: "700",
       },
     },
     "& img": {
       height: "48px",
       [theme.breakpoints.between("mobile", "tablet")]: {
-        height: "28px",
+        height: "24px",
       },
     },
   },
