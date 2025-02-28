@@ -1,17 +1,18 @@
 import React from "react";
 import { DashboardContainer } from "./styled";
 import Category from "./components/Category";
-import Table from "./components/Table";
 import Chart from "./components/Chart";
 import Alerts from "./components/Alerts";
+
+import DashboardTable from "./components/DashboardTable";
 
 const Dashboard: React.FC = () => {
   return (
     <DashboardContainer>
       <Category />
-      <Chart/>
-      <Alerts/>
-      <Table/>
+      <Chart />
+      <Alerts />
+      <DashboardTable />
     </DashboardContainer>
   );
 };

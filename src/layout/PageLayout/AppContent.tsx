@@ -10,6 +10,7 @@ const AppContent: React.FC = () => {
   const location = useLocation();
   const name = location.pathname.slice(1);
   const title = name.charAt(0).toUpperCase() + name.slice(1);
+  // console.log('title', title)
   return (
     <>
       <Box
@@ -18,10 +19,10 @@ const AppContent: React.FC = () => {
           flexDirection: "column",
           gap: "10px",
           width: "100%",
-          // p:1,
+          overflowX: "auto",
         }}
       >
-        <Box sx={{ height: "100px", flexShrink: 0 }}>
+        <Box sx={{ height: "100px" }}>
           <Navbar />
           <Header title={title} />
         </Box>

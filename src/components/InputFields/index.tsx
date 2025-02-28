@@ -5,14 +5,14 @@ import { TextField, TextFieldVariants, Typography } from "@mui/material";
 
 interface InputFieldProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  control: any;
-  id: string;
+  control?: any;
+  id?: string;
   name: string;
   label: string;
   type: string;
   variant: TextFieldVariants;
   placeholder: string;
-  rules: Record<string, unknown>;
+  rules?: Record<string, unknown>;
 }
 
 const InputField: React.FC<InputFieldProps> = (props) => {

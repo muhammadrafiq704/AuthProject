@@ -28,17 +28,20 @@ const BasicLineChart: React.FC = () => {
             fontSize: "14px",
             [theme.breakpoints.between("mobile", "tablet")]: {
               fontSize: "14px",
-              fontWeight:'700'
+              fontWeight: "700",
             },
             [theme.breakpoints.between("tablet", "laptop")]: {
               fontSize: "16px",
-               fontWeight:'700'
+              fontWeight: "700",
             },
             [theme.breakpoints.between("laptop", "desktop")]: {
               fontSize: "18px",
-              fontWeight:'700'
+              fontWeight: "700",
             },
-            [theme.breakpoints.up("desktop")]: { fontSize: "24px",  fontWeight:'700' },
+            [theme.breakpoints.up("desktop")]: {
+              fontSize: "24px",
+              fontWeight: "700",
+            },
           }}
         >
           Traffic
@@ -63,7 +66,14 @@ const BasicLineChart: React.FC = () => {
               Offers
             </Typography>
           </Box>
-          <Box sx={{ display: "flex", alignItems: "center", justifyContent:'center', gap: "8px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "8px",
+            }}
+          >
             <Box
               sx={{
                 borderRadius: "50%",
@@ -85,7 +95,7 @@ const BasicLineChart: React.FC = () => {
           <UIButton
             fs={12}
             variant="outlined"
-            styleType="inverted"
+            styletype="inverted"
             label="Week"
             sx={{
               display: { mobile: "none", tablet: "block" },
@@ -94,7 +104,7 @@ const BasicLineChart: React.FC = () => {
           <UIButton
             fs={12}
             variant="outlined"
-            styleType="inverted"
+            styletype="inverted"
             label="Month"
             sx={{
               display: { mobile: "none", tablet: "block" },
@@ -103,7 +113,7 @@ const BasicLineChart: React.FC = () => {
           <UIButton
             fs={12}
             variant="contained"
-            styleType="default"
+            styletype="default"
             label="Year"
             sx={{
               display: { mobile: "none", tablet: "block" },

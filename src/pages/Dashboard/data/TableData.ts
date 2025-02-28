@@ -42,5 +42,4 @@ const rows = [
   },
 ];
 
-
-export default rows
+export {rows}

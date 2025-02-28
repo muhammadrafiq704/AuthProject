@@ -14,8 +14,6 @@ import { GridExpandMoreIcon } from "@mui/x-data-grid";
 import { NavLink, useLocation } from "react-router-dom";
 import SidebarData from "./utils";
 
-
-
 const SidebarDrawer: React.FC = () => {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -78,10 +76,18 @@ const SidebarDrawer: React.FC = () => {
           const isChildActive = item?.children?.some(
             (child) => child.href === location.pathname
           );
+          // console.log('isChildActive', isChildActive);
+
           return item.accordion ? (
             <Accordion
               key={item.id}
-              sx={{ backgroundColor: "transparent", boxShadow: "none" }}
+              sx={{
+                backgroundColor: isChildActive
+                  ? "rgba(248, 248, 248, 0.18)"
+                  : "transparent",
+                boxShadow: "none",
+                borderRadius: "20px",
+              }}
               expanded={expandedAccordion === item.id || isChildActive}
               onChange={() =>
                 setExpandedAccordion(
@@ -98,16 +104,16 @@ const SidebarDrawer: React.FC = () => {
                 sx={{
                   display: "flex",
                   gap: "27px",
-                  backgroundColor:
-                    location.pathname === item.href
-                      ? "rgba(248, 248, 248, 0.27)"
-                      : "",
-                  borderRadius: location.pathname === item.href ? "20px" : "",
                 }}
               >
                 <img src={item.icon} alt="icon" height={24} />
                 <Typography
-                  sx={{ color: "white", fontSize: "16px", fontWeight: "600" }}
+                  sx={{
+                    color: "white",
+                    fontSize: "16px",
+                    fontWeight: "600",
+                    marginLeft: "8px",
+                  }}
                 >
                   {item.title}
                 </Typography>
@@ -119,22 +125,19 @@ const SidebarDrawer: React.FC = () => {
                     display: "flex",
                     alignItems: "center",
                     marginLeft: "20px",
-                    p: 0,
-                    pl: 4,
-                    backgroundColor:
-                      location.pathname === child.href
-                        ? "rgba(248, 248, 248, 0.27)"
-                        : "",
-                    borderRadius:
-                      location.pathname === child.href ? "20px" : "",
-                    padding: location.pathname === child.href ? 2 : "",
+                    width: "220px",
+                    p: 1,
+                    pl: 2,
                   }}
                 >
                   <NavLink
                     to={child.href}
                     style={{
                       textDecoration: "none",
-                      color: "white",
+                      color:
+                        location.pathname === child.href
+                          ? "white"
+                          : "rgba(248, 248, 248, 0.70)",
                       fontSize: "16px",
                       fontWeight: "600",
                     }}
@@ -200,4 +203,4 @@ const SidebarDrawer: React.FC = () => {
   );
 };
 
-export default SidebarDrawer ;
+export default SidebarDrawer;

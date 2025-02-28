@@ -17,7 +17,7 @@ const Alerts: React.FC = () => {
         <UIButton
           fs={12}
           variant="outlined"
-          styleType="inverted"
+          styletype="inverted"
           label="View All"
         />
       </AlertHeader>

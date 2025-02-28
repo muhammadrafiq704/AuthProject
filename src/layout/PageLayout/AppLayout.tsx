@@ -9,9 +9,8 @@ const AppLayout: React.FC = () => {
       sx={{
         display: "flex",
         height: "100dvh",
-        width: "100%",
         p: 1,
-        gap: "20px",
+        gap: "10px",
       }}
     >
       {/* sidebar drawer  */}
