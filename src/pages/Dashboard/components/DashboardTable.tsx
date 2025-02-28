@@ -8,7 +8,7 @@ import UIButton from "../../../components/Button/UIButton";
 
 const DashboardTable: React.FC = () => {
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
       <AlertHeader>
         <p>Recent Offers</p>
         <UIButton

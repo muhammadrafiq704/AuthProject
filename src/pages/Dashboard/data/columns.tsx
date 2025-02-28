@@ -33,7 +33,7 @@ export const columns: GridColDef[] = [
   {
     field: "action",
     headerName: "Action",
-    width: 100,
+    width: 120,
     sortable: false,
     renderCell: () => (
       <>

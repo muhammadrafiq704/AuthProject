@@ -31,6 +31,12 @@ const Table: React.FC<TableProps> = ({ rows, columns }) => {
             fontWeight: "bold",
             fontSize: "14px",
           },
+          "& .MuiDataGrid-columnHeaders": {
+            backgroundColor: "rgba(97, 160, 253, 0.1) !important", 
+          },
+          "& .MuiDataGrid-columnHeader": {
+            backgroundColor: "rgba(97, 160, 253, 0.1) !important",
+          },
         }}
       />
     </Paper>

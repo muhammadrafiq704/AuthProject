@@ -29,7 +29,7 @@ export const tenantColumns: GridColDef[] = [
   {
     field: "status",
     headerName: "Status",
-    width: 100,
+    width: 120,
     renderCell: (params: GridRenderCellParams<{ status: string }>) => {
       const status = params.value as string;
       const statusColor = status === "Active" ? "success" : "warning";
@@ -45,7 +45,7 @@ export const tenantColumns: GridColDef[] = [
   {
     field: "action",
     headerName: "Action",
-    width: 150,
+    width: 130,
     sortable: false,
     renderCell: () => (
       <>
