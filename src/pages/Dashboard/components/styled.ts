@@ -8,6 +8,7 @@ const NavbarContainer = styled("div")(({ theme }) => ({
   alignItems: "center",
   gap: "16px",
   padding: "4px",
+  // border:'1px solid red',
   "& img": {
     cursor: "pointer",
     [theme.breakpoints.between("mobile", "tablet")]: {
@@ -47,6 +48,7 @@ const HeaderContainer = styled("div")(({ theme }) => ({
   justifyContent: "space-between",
   alignItems: "center",
   padding: "4px",
+  // border:'1px solid red',
   "& p": {
     fontSize: "38px",
     fontWeight: "700",
@@ -219,6 +221,12 @@ const TableHead = styled("div")(({ theme }) => ({
     color: theme.palette.text.primary,
   },
 }));
+const HeaderRightContent = styled("div") ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent:"center",
+  gap:'12px'
+});
 
 export {
   NavbarContainer,
@@ -230,4 +238,5 @@ export {
   AlertCardContainer,
   TableContainer,
   TableHead,
+  HeaderRightContent
 };

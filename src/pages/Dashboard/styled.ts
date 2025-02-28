@@ -5,9 +5,8 @@ const DashboardContainer = styled("div")({
   flexDirection:'column',
   gap:'10px',
   width: "100%",
-  paddingLeft:'10px',
-  paddingRight:'10px',
-  overflowY:'auto'
+  padding:'10px 10px',
+  overflowY:'auto',
 });
 
 export { DashboardContainer };

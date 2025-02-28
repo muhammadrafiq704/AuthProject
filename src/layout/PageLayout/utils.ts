@@ -18,14 +18,20 @@ const SidebarData: UtilsDataProps[] = [
     id: 2,
     title: "User",
     icon: "/assets/SidebarIcons/user.png",
-    href: "",
+    href: "/user",
     accordion: true,
     children: [
       {
         id: 2.1,
-        title: "User A",
+        title: "Tenant Accounts",
         icon: "/assets/SidebarIcons/user.png",
-        href: "/userA",
+        href: "/tenantAccounts",
+      },
+      {
+        id: 2.2,
+        title: "Landlord Accounts",
+        icon: "/assets/SidebarIcons/user.png",
+        href: "/landlordAccounts",
       },
     ],
   },

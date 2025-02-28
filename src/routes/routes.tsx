@@ -8,10 +8,11 @@ import ResetPassword from "../pages/ResetPassword/ResetPassword";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import PageLayout from "../layout/PageLayout/AppLayout";
 import Dashboard from "../pages/Dashboard";
-import User from "../pages/User";
 import OpenHouses from "../pages/OpenHouses";
 import PropertyA from "../pages/Property";
 import NotFound from "../components/NotFound";
+import TenantAccounts from "../pages/User/TenantAccounts";
+import LandlordAccounts from "../pages/User/LandlordAccounts";
 
 // Loader function
 const forgotPasswordLoader = async () => {
@@ -49,9 +50,14 @@ const appRoutes = (
         element={<Dashboard />}
         loader={forgotPasswordLoader}
       />
-      <Route  //demo routes
-        path={RouteData.USERSA}
-        element={<User />}
+      <Route
+        path={RouteData.TENANTACCOUNTS}
+        element={<TenantAccounts/>}
+        loader={forgotPasswordLoader}
+      />
+      <Route 
+        path={RouteData.LANDLORDACCOUNTS}
+        element={<LandlordAccounts />}
         loader={forgotPasswordLoader}
       />
       <Route //demo routes

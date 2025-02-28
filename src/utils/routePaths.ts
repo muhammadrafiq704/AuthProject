@@ -1,16 +1,17 @@
 const RouteData = {
-    APP:'/',
+  APP: "/",
+  // app layout route
+  SIGNIN: "/",
+  FORGOTPASSWORD: "/forgot-password",
+  RESETPASSWORD: "/reset-password",
 
-    // app layout route 
-    SIGNIN: '/',
-    FORGOTPASSWORD: '/forgot-password',
-    RESETPASSWORD: '/reset-password',
-    
-    //page layout route
-    DASHBOARD: "/dashboard",
-    USERSA: "/userA",  //demo routes
-    OPENHOUSES: "/open-houses",  //demo routes
-    PROPERTYA: "/propertyA",  //demo routes
+  //page layout route
+  DASHBOARD: "/dashboard",
+  // user paths
+  TENANTACCOUNTS: "/tenantAccounts",
+  LANDLORDACCOUNTS: "/landlordAccounts",
 
-}
-export default RouteData
+  OPENHOUSES: "/open-houses", //demo routes
+  PROPERTYA: "/propertyA", //demo routes
+};
+export default RouteData;

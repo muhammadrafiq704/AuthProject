@@ -6,7 +6,6 @@ const PageContainer = styled("div")(({ theme }) => ({
   height: "100dvh",
   padding: "20px",
   fontFamily:'Raleway',
-  border: "2px solid red",
   backgroundColor:theme.palette.primary.main,
 }));
 

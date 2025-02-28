@@ -8,7 +8,7 @@ interface UIButtonProps extends ButtonProps {
   label?: string;
   variant?: "contained" | "outlined";
   fs?: number;
-  styleType?: "default" | "inverted";
+  styletype?: "default" | "inverted";
   isLoading?: boolean;
 }
 
@@ -16,14 +16,14 @@ const UIButton = ({
   label,
   variant,
   fs,
-  styleType,
+  styletype,
   isLoading = false,
   ...props
 }: UIButtonProps) => {
   return variant === "outlined" ? (
     <StyledOutlinedButton
       fs={fs}
-      styleType={styleType}
+      styletype={styletype}
       disabled={isLoading}
       {...props}
     >
@@ -32,7 +32,7 @@ const UIButton = ({
   ) : variant === "contained" ? (
     <StyledContainedButton
       fs={fs}
-      styleType={styleType}
+      styletype={styletype}
       disabled={isLoading}
       {...props}
     >
