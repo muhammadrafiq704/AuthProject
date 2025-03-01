@@ -41,7 +41,6 @@ const ForgotPassword: React.FC = () => {
                 type="email"
                 placeholder="Enter your email"
                 label="Email"
-                variant="filled"
                 rules={{ required: "Email is required" }}
               />
             </InputContent>

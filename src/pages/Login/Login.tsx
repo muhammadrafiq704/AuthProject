@@ -35,7 +35,6 @@ const SignIn: React.FC = () => {
                 control={control}
                 name="email"
                 type="email"
-                variant="filled"
                 placeholder="Enter your email"
                 label="Enter your email"
                 rules={{ required: "Email is required" }}
@@ -45,7 +44,7 @@ const SignIn: React.FC = () => {
                 control={control}
                 name="password"
                 type="password"
-                variant="filled"
+                icon={true}
                 placeholder="Enter your password"
                 label="Enter your password"
                 rules={{ required: "Password is required" }}

@@ -1,4 +1,3 @@
-
 const rows = [
   {
     id: 1,
@@ -42,4 +41,4 @@ const rows = [
   },
 ];
 
-export {rows}
+export { rows };
