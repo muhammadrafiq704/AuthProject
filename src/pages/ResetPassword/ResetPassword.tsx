@@ -41,7 +41,6 @@ const ResetPassword: React.FC = () => {
                 id="1"
                 name="new_password"
                 type="password"
-                variant="filled"
                 placeholder="Enter new password"
                 label="New Password"
                 rules={{ required: "New password is required" }}
@@ -51,7 +50,6 @@ const ResetPassword: React.FC = () => {
                 id="2"
                 name="confirm_password"
                 type="password"
-                variant="filled"
                 placeholder="Enter confirm password"
                 label="Confirm Password"
                 rules={{ required: "Confirm password is required" }}

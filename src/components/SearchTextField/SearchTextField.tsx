@@ -24,7 +24,7 @@ const SearchTextField: React.FC<SearchTextFieldProps> = ({
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      sx={{
+      sx={{ 
         p: 1,
         display: "flex",
         justifyContent: "center",
